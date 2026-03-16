@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dios Es Fiel · Página Cristiana</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <!-- Font Awesome (iconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #faf7f2;  /* fondo cálido muy claro */
+            color: #2e3b3b;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+
+        /* Header sencillo */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #a57c5c;
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+            color: #c9a959;
+        }
+
+        nav a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: #4a5b5b;
+            font-weight: 400;
+            transition: color 0.2s;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: #b48b5a;
+        }
+
+        /* Hero section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(235, 225, 215, 0.9) 0%, rgba(255, 250, 240, 0.8) 100%), url('https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(4px);
+            padding: 3rem 4rem;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 5rem);
+            color: #3d2b1a;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #4d3a2a;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #d4b68a;
+            color: #2d2a24;
+            padding: 0.9rem 2.5rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            box-shadow: 0 4px 12px rgba(180, 140, 100, 0.3);
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .btn:hover {
+            background-color: #c9a570;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(150, 110, 70, 0.3);
+        }
+
+        /* Versículo destacado */
+        .verse-section {
+            padding: 5rem 5%;
+            background-color: #ffffffd9;
+            backdrop-filter: blur(4px);
+            margin: 2rem 5%;
+            border-radius: 60px 60px 30px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        .verse-card {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .verse-card i {
+            font-size: 2.5rem;
+            color: #d4b68a;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+
+        .verse-text {
+            font-size: 1.9rem;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.5;
+            color: #3d2b1a;
+            margin-bottom: 1.5rem;
+        }
+
+        .verse-ref {
+            font-size: 1.3rem;
+            color: #a57c5c;
+            letter-spacing: 1px;
+        }
+
+        /* Sección de atributos / tarjetas */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 4rem 5%;
+            background: #f7efe5;
+        }
+
+        .feature-item {
+            flex: 1 1 250px;
+            max-width: 300px;
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 12px 24px -12px rgba(90, 60, 30, 0.15);
+            transition: all 0.2s;
+        }
+
+        .feature-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 30px -10px rgba(120, 80, 50, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #c9a959;
+            margin-bottom: 1.2rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: #4d3a2a;
+        }
+
+        .feature-item p {
+            color: #4f5d5d;
+            font-size: 1rem;
+        }
+
+        /* Llamada a la reflexión */
+        .reflection {
+            background: linear-gradient(to right, #e6dbcf, #f1e9df);
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .reflection h2 {
+            font-size: 2.8rem;
+            color: #3d2b1a;
+            margin-bottom: 1rem;
+        }
+
+        .reflection p {
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.25rem;
+            color: #4f4a44;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d3a3a;
+            color: #e6ddd0;
+            padding: 3rem 5% 2rem;
+            text-align: center;
+            border-radius: 50px 50px 0 0;
+            margin-top: 2rem;
+        }
+
+        .footer-content p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: #cdc3b5;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.8rem;
+            margin: 1.5rem 0;
+        }
+
+        .social-icons a {
+            color: #e6ddd0;
+            font-size: 1.6rem;
+            transition: color 0.2s;
+        }
+
+        .social-icons a:hover {
+            color: #d4b68a;
+        }
+
+        /* responsive */
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 0.8rem;
+                text-align: center;
+            }
+            nav a {
+                margin: 0 0.8rem;
+            }
+            .hero-content {
+                padding: 2rem 1.5rem;
+            }
+            .verse-text {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-cross"></i>
+            <span>Fe y Esperanza</span>
+        </div>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Versículos</a>
+            <a href="#">Oración</a>
+            <a href="#">Reflexiones</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Dios Es Fiel</h1>
+                <p>Su amor nunca falla, su misericordia es nueva cada mañana. En cada estación, su fidelidad nos sostiene.</p>
+                <a href="#" class="btn"><i class="fas fa-heart" style="margin-right: 8px;"></i>Confía en Él</a>
+            </div>
+        </section>
+
+        <!-- Versículo principal -->
+        <section class="verse-section">
+            <div class="verse-card">
+                <i class="fas fa-quote-right"></i>
+                <div class="verse-text">
+                    “Por la misericordia de Jehová no hemos sido consumidos, porque nunca decayeron sus misericordias. Nuevas son cada mañana; grande es tu fidelidad.”
+                </div>
+                <div class="verse-ref">— Lamentaciones 3:22-23</div>
+            </div>
+        </section>
+
+        <!-- Pequeñas virtudes / tarjetas -->
+        <section class="features">
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-dove"></i></div>
+                <h3>Paz</h3>
+                <p>La paz de Dios, que sobrepasa todo entendimiento, cuidará vuestros corazones.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                <h3>Esperanza</h3>
+                <p>Porque yo sé los pensamientos que tengo acerca de vosotros, pensamientos de paz y no de mal.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-feather-alt"></i></div>
+                <h3>Gracia</h3>
+                <p>Bástate mi gracia, porque mi poder se perfecciona en la debilidad.</p>
+            </div>
+        </section>
+
+        <!-- Reflexión -->
+        <section class="reflection">
+            <h2>Él permanece fiel</h2>
+            <p>Aunque nosotros seamos infieles, él permanece fiel, porque no puede negarse a sí mismo. Cada día es una oportunidad para experimentar su amor inquebrantable.</p>
+            <a href="#" class="btn" style="background-color: #c9a570; color: #2d2a24;">Medita en su palabra</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p><i class="fas fa-cross" style="margin-right: 6px;"></i>  “Fiel es el que os llama, el cual también lo hará”  —  1 Tesalonicenses 5:24</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p style="font-size: 0.9rem;">© 2025 · Dios Es Fiel · Un mensaje de amor y verdad</p>
+        </div>
+    </footer>
+</body>
+</html>
