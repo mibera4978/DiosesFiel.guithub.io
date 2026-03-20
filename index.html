@@ -3,362 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dios Es Fiel · Página Cristiana</title>
-    <!-- Fonts locales -->
-    <link rel="stylesheet" href="./assets/fonts/fonts.css">
-    <!-- Iconos locales -->
-    <link rel="stylesheet" href="./assets/icons/icons.css">
+    <meta name="description" content="Dioses Fiel - Un lugar espiritual con recursos, testimonios y guías de oración.">
+    <meta property="og:title" content="Dioses Fiel">
+    <meta property="og:description" content="Encuentra inspiración y recursos para tu vida espiritual.">
+    <meta property="og:image" content="favicon.ico">
+    <meta property="og:url" content="https://diosesfiel.org">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Dioses Fiel</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background-color: #faf7f2;
-            color: #2e3b3b;
-            line-height: 1.6;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s;
         }
-
-        h1, h2, h3 {
-            font-family: 'Georgia', 'Playfair Display', serif;
-            font-weight: 400;
-            letter-spacing: -0.02em;
-        }
-
-        /* Header */
         header {
+            background: linear-gradient(45deg, #f5a623, #fabe3c);
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 5%;
-            background-color: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(8px);
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            margin: 20px;
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: #a57c5c;
+        nav ul {
+            list-style-type: none;
+            padding: 0;
         }
-
-        .logo::before {
-            content: "✦";
-            font-size: 1.8rem;
-            color: #c9a959;
+        nav li {
+            display: inline;
+            margin: 0 15px;
         }
-
-        nav a {
-            margin-left: 2rem;
-            text-decoration: none;
-            color: #4a5b5b;
-            font-weight: 400;
-            transition: color 0.2s;
-            font-size: 1rem;
-        }
-
-        nav a:hover {
-            color: #b48b5a;
-        }
-
-        /* Hero section */
-        .hero {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(235, 225, 215, 0.9) 0%, rgba(255, 250, 240, 0.8) 100%), url('./assets/images/hero-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            padding: 2rem;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            background-color: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(4px);
-            padding: 3rem 4rem;
-            border-radius: 32px;
-            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.1);
-            border: 1px solid rgba(255,255,255,0.4);
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 10vw, 5rem);
-            color: #3d2b1a;
-            margin-bottom: 1rem;
-            line-height: 1.1;
-            font-style: italic;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            color: #4d3a2a;
-            margin-bottom: 2rem;
-            font-weight: 300;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #d4b68a;
-            color: #2d2a24;
-            padding: 0.9rem 2.5rem;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 500;
-            letter-spacing: 0.3px;
-            box-shadow: 0 4px 12px rgba(180, 140, 100, 0.3);
-            transition: all 0.2s;
-            border: none;
-            cursor: pointer;
-            font-size: 1.1rem;
-        }
-
-        .btn:hover {
-            background-color: #c9a570;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(150, 110, 70, 0.3);
-        }
-
-        /* Versículo destacado */
-        .verse-section {
-            padding: 5rem 5%;
-            background-color: #ffffffd9;
-            backdrop-filter: blur(4px);
-            margin: 2rem 5%;
-            border-radius: 60px 60px 30px 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-        }
-
-        .verse-card {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .verse-card::before {
-            content: "❝";
-            font-size: 2.5rem;
-            color: #d4b68a;
-            display: block;
-            margin-bottom: 1rem;
-            opacity: 0.7;
-        }
-
-        .verse-text {
-            font-size: 1.9rem;
-            font-family: 'Georgia', serif;
-            line-height: 1.5;
-            color: #3d2b1a;
-            margin-bottom: 1.5rem;
-        }
-
-        .verse-ref {
-            font-size: 1.3rem;
-            color: #a57c5c;
-            letter-spacing: 1px;
-        }
-
-        /* Sección de atributos / tarjetas */
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            padding: 4rem 5%;
-            background: #f7efe5;
-        }
-
-        .feature-item {
-            flex: 1 1 250px;
-            max-width: 300px;
+        section {
+            padding: 20px;
+            margin: 20px;
             background: white;
-            padding: 2.5rem 2rem;
-            border-radius: 30px;
-            text-align: center;
-            box-shadow: 0 12px 24px -12px rgba(90, 60, 30, 0.15);
-            transition: all 0.2s;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-
-        .feature-item:hover {
-            transform: scale(1.02);
-            box-shadow: 0 20px 30px -10px rgba(120, 80, 50, 0.2);
+        .dark-mode {
+            background-color: #2a2a2a;
+            color: #f0f0f0;
         }
-
-        .feature-icon {
-            font-size: 3rem;
-            color: #c9a959;
-            margin-bottom: 1.2rem;
-        }
-
-        .feature-item h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            color: #4d3a2a;
-        }
-
-        .feature-item p {
-            color: #4f5d5d;
-            font-size: 1rem;
-        }
-
-        /* Llamada a la reflexión */
-        .reflection {
-            background: linear-gradient(to right, #e6dbcf, #f1e9df);
-            padding: 5rem 5%;
-            text-align: center;
-        }
-
-        .reflection h2 {
-            font-size: 2.8rem;
-            color: #3d2b1a;
-            margin-bottom: 1rem;
-        }
-
-        .reflection p {
-            max-width: 650px;
-            margin: 0 auto 2.5rem;
-            font-size: 1.25rem;
-            color: #4f4a44;
-        }
-
-        /* Footer */
         footer {
-            background-color: #2d3a3a;
-            color: #e6ddd0;
-            padding: 3rem 5% 2rem;
             text-align: center;
-            border-radius: 50px 50px 0 0;
-            margin-top: 2rem;
+            padding: 15px;
+            background: #f5a623;
+            color: white;
         }
-
-        .footer-content p {
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            color: #cdc3b5;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1.8rem;
-            margin: 1.5rem 0;
-        }
-
-        .social-icons a {
-            color: #e6ddd0;
-            text-decoration: none;
-            font-size: 1.3rem;
-            transition: color 0.2s;
-        }
-
-        .social-icons a:hover {
-            color: #d4b68a;
-        }
-
-        /* responsive */
-        @media (max-width: 700px) {
-            header {
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            nav {
                 flex-direction: column;
-                gap: 0.8rem;
-                text-align: center;
-            }
-            nav a {
-                margin: 0 0.8rem;
-            }
-            .hero-content {
-                padding: 2rem 1.5rem;
-            }
-            .verse-text {
-                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <span>Fe y Esperanza</span>
-        </div>
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#versiculos">Versículos</a>
-            <a href="#oracion">Oración</a>
-            <a href="#reflexiones">Reflexiones</a>
-        </nav>
+        <h1>Dioses Fiel</h1>
+        <button id="darkModeToggle">🌙 Cambiar a Modo Oscuro</button>
     </header>
-
-    <main>
-        <!-- Hero -->
-        <section class="hero" id="inicio">
-            <div class="hero-content">
-                <h1>Dios Es Fiel</h1>
-                <p>Su amor nunca falla, su misericordia es nueva cada mañana. En cada estación, su fidelidad nos sostiene.</p>
-                <a href="#versiculos" class="btn">♥ Confía en Él</a>
-            </div>
-        </section>
-
-        <!-- Versículo principal -->
-        <section class="verse-section" id="versiculos">
-            <div class="verse-card">
-                <div class="verse-text">
-                    "Por la misericordia de Jehová no hemos sido consumidos, porque nunca decayeron sus misericordias. Nuevas son cada mañana; grande es tu fidelidad."
-                </div>
-                <div class="verse-ref">— Lamentaciones 3:22-23</div>
-            </div>
-        </section>
-
-        <!-- Pequeñas virtudes / tarjetas -->
-        <section class="features">
-            <div class="feature-item">
-                <div class="feature-icon">☮</div>
-                <h3>Paz</h3>
-                <p>La paz de Dios, que sobrepasa todo entendimiento, cuidará vuestros corazones.</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">🕊</div>
-                <h3>Esperanza</h3>
-                <p>Porque yo sé los pensamientos que tengo acerca de vosotros, pensamientos de paz y no de mal.</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">✨</div>
-                <h3>Gracia</h3>
-                <p>Bástate mi gracia, porque mi poder se perfecciona en la debilidad.</p>
-            </div>
-        </section>
-
-        <!-- Reflexión -->
-        <section class="reflection" id="reflexiones">
-            <h2>Él permanece fiel</h2>
-            <p>Aunque nosotros seamos infieles, él permanece fiel, porque no puede negarse a sí mismo. Cada día es una oportunidad para experimentar su amor inquebrantable.</p>
-            <a href="#oracion" class="btn" style="background-color: #c9a570; color: #2d2a24;">Medita en su palabra</a>
-        </section>
-    </main>
-
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#testimonials">Testimonies</a></li>
+            <li><a href="#prayerGuide">Prayer Guide</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="hero">
+        <h2>Bienvenido a Dioses Fiel</h2>
+        <p>Aquí encontrarás recursos para tu crecimiento espiritual.</p>
+    </section>
+    <section id="about">
+        <h2>About</h2>
+        <p>Un breve resumen sobre la misión y visión.</p>
+    </section>
+    <section id="resources">
+        <h2>Resources/Devotionals</h2>
+        <p>Enlaces a los recursos.</p>
+    </section>
+    <section id="testimonials">
+        <h2>Testimonies</h2>
+        <p>Testimonios de quienes han sido impactados.</p>
+    </section>
+    <section id="prayerGuide">
+        <h2>Prayer Guide</h2>
+        <p>Guía de oración disponible aquí.</p>
+    </section>
+    <section id="contact">
+        <h2>Contact Form</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <input type="submit" value="Submit">
+        </form>
+    </section>
     <footer>
-        <div class="footer-content">
-            <p>✦  "Fiel es el que os llama, el cual también lo hará"  —  1 Tesalonicenses 5:24</p>
-            <div class="social-icons">
-                <a href="#" title="Facebook">f</a>
-                <a href="#" title="Instagram">@</a>
-                <a href="#" title="YouTube">▶</a>
-            </div>
-            <p style="font-size: 0.9rem;">© 2025 · Dios Es Fiel · Un mensaje de amor y verdad</p>
-        </div>
+        <p>Síguenos en nuestras redes sociales: <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+        <p>&copy; 2026 Dioses Fiel</p>
     </footer>
+    <script>
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Dioses Fiel",
+        "url": "https://diosesfiel.org"
+    }
+    </script>
 </body>
 </html>
