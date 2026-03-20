@@ -1,129 +1,54 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dioses Fiel - Un lugar espiritual con recursos, testimonios y guías de oración.">
-    <meta property="og:title" content="Dioses Fiel">
-    <meta property="og:description" content="Encuentra inspiración y recursos para tu vida espiritual.">
-    <meta property="og:image" content="favicon.ico">
-    <meta property="og:url" content="https://diosesfiel.org">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Dioses Fiel</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #333;
-            background-color: #f9f9f9;
-            transition: background-color 0.3s;
-        }
-        header {
-            background: linear-gradient(45deg, #f5a623, #fabe3c);
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 20px;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav li {
-            display: inline;
-            margin: 0 15px;
-        }
-        section {
-            padding: 20px;
-            margin: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        .dark-mode {
-            background-color: #2a2a2a;
-            color: #f0f0f0;
-        }
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: #f5a623;
-            color: white;
-        }
-        /* Responsive Styles */
-        @media (max-width: 600px) {
-            nav {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <meta name="description" content="A professional and modern website offering prayer guides, testimonials, and more.">
+    <link rel="stylesheet" href="styles.css">
+    <title>Welcome to Dioses Fiel</title>
 </head>
 <body>
     <header>
-        <h1>Dioses Fiel</h1>
-        <button id="darkModeToggle">🌙 Cambiar a Modo Oscuro</button>
+        <div class="hero">
+            <h1>Welcome to Dioses Fiel</h1>
+            <p>Your spiritual journey starts here.</p>
+            <a href="#newsletter" class="btn">Sign Up for our Newsletter</a>
+        </div>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#resources">Resources</a></li>
-            <li><a href="#testimonials">Testimonies</a></li>
-            <li><a href="#prayerGuide">Prayer Guide</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <section id="hero">
-        <h2>Bienvenido a Dioses Fiel</h2>
-        <p>Aquí encontrarás recursos para tu crecimiento espiritual.</p>
-    </section>
+
     <section id="about">
-        <h2>About</h2>
-        <p>Un breve resumen sobre la misión y visión.</p>
+        <h2>About Us</h2>
+        <p>We provide resources to help you deepen your faith.</p>
     </section>
-    <section id="resources">
-        <h2>Resources/Devotionals</h2>
-        <p>Enlaces a los recursos.</p>
-    </section>
-    <section id="testimonials">
-        <h2>Testimonies</h2>
-        <p>Testimonios de quienes han sido impactados.</p>
-    </section>
-    <section id="prayerGuide">
+
+    <section id="prayer-guide">
         <h2>Prayer Guide</h2>
-        <p>Guía de oración disponible aquí.</p>
+        <p>Access our comprehensive prayer guide.</p>
     </section>
-    <section id="contact">
-        <h2>Contact Form</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-            <input type="submit" value="Submit">
-        </form>
+
+    <section id="testimonials">
+        <h2>Testimonials</h2>
+        <p>Hear from those who have found enlightenment through our community.</p>
     </section>
+
+    <section id="blog">
+        <h2>Blog</h2>
+        <p>Read our latest articles on faith, spirituality, and community.</p>
+    </section>
+
     <footer>
-        <p>Síguenos en nuestras redes sociales: <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
-        <p>&copy; 2026 Dioses Fiel</p>
+        <div id="newsletter">
+            <h3>Subscribe to our Newsletter</h3>
+            <input type="email" placeholder="Enter your email">
+            <button>Subscribe</button>
+        </div>
+        <div id="social-links">
+            <a href="https://facebook.com">Facebook</a>
+            <a href="https://twitter.com">Twitter</a>
+            <a href="https://instagram.com">Instagram</a>
+        </div>
+        <p>&copy; 2026 Dioses Fiel. All Rights Reserved.</p>
     </footer>
-    <script>
-        document.getElementById('darkModeToggle').addEventListener('click', function() {
-            document.body.classList.toggle('dark-mode');
-        });
-    </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Dioses Fiel",
-        "url": "https://diosesfiel.org"
-    }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
